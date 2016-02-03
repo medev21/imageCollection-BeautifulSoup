@@ -9,14 +9,16 @@ import re
 #
 # # soup = BeautifulSoup(html_page, "html.parser")
 
-req = Request("https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_finals", headers={'User-Agent': 'Mozilla/5.0'})
+req = Request("http://www.fifa.com/fifa-tournaments/archive/worldcup/index.html", headers={'User-Agent': 'Mozilla/5.0'})
 webpage = urlopen(req).read()
 
-import pdb; pdb.set_trace()
 
-
-# order_list = soup.find_all("li", {"class": "comp-item"})
+page_soup = BeautifulSoup(webpage, "html.parser")
+order_list = page_soup.find_all("a", {"class": "link-wrap"})
 #
-# # import pdb, pdb.set_trace()
 #
 # print(order_list)
+
+# import pdb; pdb.set_trace()
+
+print(type(order_list[0]))
