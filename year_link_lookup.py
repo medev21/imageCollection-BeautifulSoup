@@ -13,6 +13,4 @@ order_list = page_soup.find_all("a", {"class": "link-wrap"}, href=True) #extract
 for item in order_list:
     print(item['href'])
 
-import pdb; pdb.set_trace()
-
-# print(type(order_list[0]))
+# import pdb; pdb.set_trace()
