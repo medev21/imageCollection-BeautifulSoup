@@ -27,8 +27,8 @@ url_list = [
 ]
 
 for item in url_list:
-    time.sleep(3)
-    req = Request("http://www.fifa.com" + item, headers={'User-Agent': 'Mozilla/5.0'})
+    time.sleep(3) #sleep for 3 secs
+    req = Request("http://www.fifa.com" + item, headers={'User-Agent': 'Mozilla/5.0'}) 
     webpage = urlopen(req).read()   #read the page
 
 
